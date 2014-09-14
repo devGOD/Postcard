@@ -17,7 +17,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var enterMessageTextField: UITextField!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var completeLabel: UILabel!
+    
     @IBOutlet weak var mailButton: UIButton!
+    
     
    
     override func viewDidLoad() {
@@ -32,14 +37,27 @@ class ViewController: UIViewController {
 
     @IBAction func sendMailButtonPressed(sender: UIButton) {
         //Code Will evaluate when we press the button
-        //Comment test for Git
+        //First Challenge
         messageLabel.hidden = false
+        nameLabel.hidden = false
+        
         messageLabel.text = enterMessageTextField.text
-        enterMessageTextField.text = ""
-        enterMessageTextField.resignFirstResponder()
+        nameLabel.text = enterNameTextField.text
+        
         messageLabel.textColor = UIColor.redColor()
+        nameLabel.textColor = UIColor.blueColor()
+        
+        enterMessageTextField.text = ""
+        enterNameTextField.text = ""
+        
+        enterMessageTextField.resignFirstResponder()
+        nameLabel.resignFirstResponder()
+        
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
     
+        completeLabel.hidden = false
+        completeLabel.text = "Challenge Complete!"
+        
     }
 
 }
